@@ -14,4 +14,5 @@ pillow
 python-multipart
 tqdm
 retina-face
+tf-keras
 grad-cam
