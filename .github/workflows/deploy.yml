@@ -20,4 +20,4 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           # Replace 'YOUR_SPACE_NAME' below with your actual Hugging Face Space name
-          git push --force https://CluelessCoder26:$HF_TOKEN@huggingface.co/spaces/CluelessCoder26/YOUR_SPACE_NAME main
+          git push --force https://CluelessCoder26:$HF_TOKEN@huggingface.co/spaces/CluelessCoder26/deepfake-backend main
