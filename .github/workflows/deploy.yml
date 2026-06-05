@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync-to-hub:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -15,9 +15,12 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Push to Hub
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          # Replace 'YOUR_SPACE_NAME' below with your actual Hugging Face Space name
-          git push --force https://CluelessCoder26:$HF_TOKEN@huggingface.co/spaces/CluelessCoder26/deepfake-backend main
+      - name: Sync to Hugging Face
+        uses: huggingface/hub-sync@v0.1.0
+        with:
+          github_repo_id: ${{ github.repository }}
+          # Replace CluelessCoder26/deepfake-backend with your actual Hugging Face Space ID if different
+          huggingface_repo_id: CluelessCoder26/deepfake-backend
+          hf_token: ${{ secrets.HF_TOKEN }}
+          repo_type: space
+
