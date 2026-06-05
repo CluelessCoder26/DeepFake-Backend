@@ -13,5 +13,5 @@ streamlit
 pillow
 python-multipart
 tqdm
-retinaface
+retina-face
 grad-cam
